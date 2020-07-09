@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title>Document</title>
+
+<script src="js/vue.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.css" >
+
+<!-- 需要用到Jquery吗？？？ -->
+
+</head>
+
+<body>
+
+<div id="app">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">添加品牌</h3>
+		</div>
+		<div class="panel-body form-inline">
+			<label>id
+			<input type="text" class="form-control" v-model="id">
+			</label>
+			<label>name
+			<input type="text" class="form-control" v-model="name">
+			</label>
+			<input type="button" value="添加" class="btn btn-primary"  @click="add"/>
+			<label>搜索
+			<input type="text"  class="form-control" v-model="keywords">
+			</label>
+		</div>
+	</div>
+ <table class="table table-bordered table-bordered table-striped">
+ 	<thead>
+ 		<tr>
+ 			<th>id</th>
+ 			<th>name</th>
+ 			<th>ctime</th>
+ 			<th>operation</th>
+ 		</tr>
+ 	</thead>
+ 	<tbody>
+ 		<tr v-for="item in list" :key="item.id">
+
+<td>{{ item.id }}</td>
+
+<td v-text="item.name"></td>
+
+<td>{{ item.ctime | filtertime()}}</td>
+
+<td>
+
+<a href="" @click.prevent="del(item.id)">删除</a>
+
+</td>
+
+</tr>
+ 	</tbody>
+ </table>
+</div>
+
+<script>
+
+// 创建 Vue 实例，得到 ViewModel
+Vue.filter('filtertime',function(){
+	var dt=new Date()
+	var y=dt.getFullYear()
+	var m=(dt.getMonth()+1).toString().padStart(2,'0')
+	var d=(dt.getDate()).toString().padStart(2,'0')
+	var s=(dt.getHours()).toString().padStart(2,'0')
+	var f=dt.getMinutes().toString().padStart(2,'0')
+	return y+'-'+m+'-'+d+'-'+s+'-'+f
+})
+
+var vm = new Vue({
+
+el: '#app',
+data:{
+	id:'',
+	name:'',
+	keywords:'',
+	list: [
+
+{ id: 1, name: '奔驰', ctime: new Date() },
+
+{ id: 2, name: '宝马', ctime: new Date() }
+
+]},
+methods:{
+	add(){
+		var car={id:this.id,name:this.name,ctime:new Date()}
+		this.list.push(car)
+		this.id=this.name=""
+	},
+	del(id){
+		/*this.list.some((item,i)=>{
+			if(item.id==id){
+				this.list.splice(i,1)
+				return true;
+			}
+		})*/
+		var index=this.list.find(item=>{
+			if(item.id==id){
+				return true;
+			}
+		})
+		this.list.splice(index,1)
+	}
+
+}
+
+
+});
+
+</script>
+
+</body>
+
+</html>
+
+ 
+
+
+
