@@ -1,0 +1,79 @@
+#app{
+	width: 800px;
+	height: 500px;
+	background-color: #ffffff;
+	margin: 50px auto;
+	opacity: 0.85;
+}
+
+.form-group{
+	text-align: center;
+}
+li{
+	width: 200px;
+	height: 40px;
+	background-color: #ffffff;
+	list-style: none;
+	margin-top: 1px;
+	opacity: 0.9;
+	text-align: center;
+	line-height: 35px;
+	margin-left: -25px;
+}
+li:hover{
+	background-color: #eeeeee;
+	
+}
+.fooder{
+	width: 800px;
+	height: 50px;
+	background-color: #ffffff;
+	opacity: 0.99;
+}
+.header{
+	width: 800px;
+	height: 50px;
+	background: #0088aa;
+}
+.bodyer{
+	background: #dddddd;
+	opacity: 0.8;
+	width: 800px;
+	height:400px;
+    display: flex;
+}
+audio{
+	width: 800px;
+}
+.body1{
+	width: 200px;
+	height: 400px;
+	overflow-y: hidden;
+}
+.body2{
+	width: 400px;
+	
+}
+.body3{
+	width: 200px;
+	height: 400px;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+.comment{
+	height: 65px;
+	
+}
+.mv{
+	float: right;
+	margin-right: 10px;
+	height: 70%;
+	margin-top: 7px;
+	opacity: 0.5;
+}
+.mv:hover {
+	opacity: 1.5;
+}
+.video{
+	z-index: 3;
+}
