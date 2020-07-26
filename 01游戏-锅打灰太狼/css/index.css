@@ -1,0 +1,71 @@
+#outer {
+	width: 320px;
+	height: 430px;
+	background: url(../img/game_bg.jpg);
+	background-size: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+
+#fraction {
+	font-family: "微软雅黑";
+	font-size: 20px;
+	color: white;
+	line-height: 20px;
+	position: absolute;
+	top: 12px;
+	left: 60px;
+}
+
+#time {
+	background: url(../img/progress.png) no-repeat;
+	position: absolute;
+	width: 180px;
+	height: 30px;
+	top: 66px;
+	left: 63px;
+}
+
+#menue {
+	font-family: "微软雅黑";
+	font-size: 28px;
+	line-height: 70px;
+	color: orange;
+}
+
+#startbtn,
+#restartbtn {
+	background: url(../img/bg.jpg) no-repeat;
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	background-size: 100%;
+	position: absolute;
+	top: 245px;
+	left: 120px;
+}
+
+#restartbtn {
+	display: none;
+}
+
+#end {
+	font-family: "微软雅黑";
+	font-size: 30px;
+	position: absolute;
+	top: 150px;
+	left: 70px;
+	text-align: center;
+	color: darkred;
+	display: none;
+}
+
+#pause {
+	background: url(../img/button2.png);
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	background-size: cover;
+	top: 100px;
+	display: none;
+}
